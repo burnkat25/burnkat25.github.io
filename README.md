@@ -54,10 +54,34 @@ are original — but they carry the same monochrome palette, diagonal motif, and
 5. **Fonts.** Inter is loaded from Google Fonts. Self-host it if you want zero third-party
    requests.
 
-## Deploying
+## Deployment
 
-Plain static files, so GitHub Pages works as-is: push to `burnkat25.github.io`, or enable Pages
-on any repo with the root as the source. `index.html` must stay at the root.
+Live at <https://burnkat25.github.io/>
+
+| Setting | Value |
+| --- | --- |
+| Repo | [burnkat25/burnkat25.github.io](https://github.com/burnkat25/burnkat25.github.io) |
+| Source | `main`, root folder, legacy Pages build |
+| Published | 5 Oct 2026 |
+
+Plain static files, so Pages needs no build step — `git push` to `main` and it redeploys in
+about a minute. `index.html` must stay at the root.
+
+**The previous portfolio is preserved** on the [`backup`](https://github.com/burnkat25/burnkat25.github.io/tree/backup)
+branch (commit `13836c2`), and in that commit's parent on `main`. To restore it:
+
+```bash
+git checkout backup -- index.html
+```
+
+### Social preview
+
+`og:image` points at `https://burnkat25.github.io/assets/og-cover.jpg` — an absolute URL, which
+is required; relative paths are silently ignored by scrapers. If you ever move the site to a
+custom domain, update `og:image`, `og:url`, and the `rel="canonical"` link together.
+
+Renaming the site or moving it under a subpath means updating those three too, since they're
+hardcoded rather than root-relative.
 
 ## Verified
 
